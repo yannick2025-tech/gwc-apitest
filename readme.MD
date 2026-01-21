@@ -80,30 +80,20 @@ Refer to the `userguid.MD` in the `docs` directory for more detailed usage examp
 ## 📂 Project Structure (within `gwc-apitest` module)
 
 ```
-gwc-apitest/
-├── cmd/
-│   └── apitest/
-│       └── main.go       # CLI entry point
-gwc-apitest/
-├── apitest/
-│   ├── cleanup.go
-│   └── framework.go
-├── testcases/
-│   ├── user/
-│   │   ├── 01_user_create_test.yaml
-│   │   └── ...
-│   └── ...
-gwc-apitest/
-├── docs/
-│   └── userguid.MD         # Detailed usage guide
-gwc-apitest/
-├── go.mod                  # Go module definition
-gwc-apitest/
+gwc-apitest
+├── cleanup.go
+├── framework_test.go
+├── framework.go
+├── go.mod
 ├── go.sum
-gwc-apitest/
-├── LICENSE                 # Apache 2.0 License
-gwc-apitest/
-└── README.md               # This file
+├── LICENSE
+├── logs
+├── readme.MD
+├── testdata
+│   ├── invalid_test.yaml
+│   ├── log.yaml
+│   └── valid_test.yaml
+└── userguid.MD
 ```
 
 ## 🛠️ Development
