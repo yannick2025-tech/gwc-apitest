@@ -1,0 +1,12 @@
+# Default logging configuration
+level: "Debug"
+format: "json"
+target: "file"
+filename: "logs/app.log"
+max_size: 100  # MB
+max_backups: 10 # Max old log files
+max_age: 30   # Max days to retain
+compress: false  # Compress old logs
+local_time: false # Use local time
+caller_skip: 0  # Caller skip count
+flush_interval: "5s" # Buffer flush interval (string for time.Duration)

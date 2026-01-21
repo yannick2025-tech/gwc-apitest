@@ -1,0 +1,13 @@
+suite:
+  # name: "Invalid Test Suite" # Removed to make it invalid
+  baseURL: "http://localhost:8080"
+  invalid_key: [ # Unclosed bracket to cause a syntax error
+
+scenarios:
+  - name: "Default"
+    testcases:
+      - name: "Invalid Test"
+        request:
+          method: "GET"
+          path: "/users/1"
+        # Missing 'expect' section, which is required

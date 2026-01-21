@@ -1,0 +1,26 @@
+suite:
+  name: "Sample Test Suite"
+  baseURL: "http://localhost:8080"
+
+scenarios:
+  - name: "Basic"
+    testcases:
+      - name: "Successful GET Request"
+        request:
+          method: "GET"
+          path: "/users/1"
+        expect:
+          statusCode: 200
+          body:
+            contains:
+              - "John Doe"
+  - name: "Validation"
+    testcases:
+      - name: "Failed POST Request"
+        request:
+          method: "POST"
+          path: "/users"
+          body:
+            username: "jane.doe"
+        expect:
+          statusCode: 400
