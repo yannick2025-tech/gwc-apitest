@@ -10,9 +10,6 @@ import (
 	"strings"
 	"testing"
 	"time"
-
-	"gwc/pkg/logging"
-	_ "gwc/pkg/logging/adapter" // Import adapter to set default logger
 )
 
 // Helper function to setup a mock HTTP server
@@ -55,17 +52,8 @@ func setupMockServer() *httptest.Server {
 func TestMain(m *testing.M) {
 	// Initialize a logger for tests, pointing to a dummy config or a minimal one
 	// This prevents panics if the logger is accessed during tests
-	if err := logging.InitDefaultLogger("apitest/testdata/log.yaml"); err != nil {
-		// Log the error but don't panic, as tests might not strictly depend on full logger init
-		// For critical errors, os.Exit is still an option
-		os.Stderr.WriteString("Warning: Failed to initialize test logger: " + err.Error() + "\n")
-	}
-
 	// Run tests
 	code := m.Run()
-
-	// Optionally close the logger if it was initialized
-	// logging.GetDefaultLogger().Close() // Assuming GetDefaultLogger returns a closable logger
 
 	os.Exit(code)
 }
